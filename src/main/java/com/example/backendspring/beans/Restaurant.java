@@ -18,4 +18,6 @@ public class Restaurant {
     }
     
     // pour le test
+
+    // fin de test
 }
