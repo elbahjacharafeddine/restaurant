@@ -16,4 +16,6 @@ public class Restaurant {
     public void setId(Long id) {
         this.id = id;
     }
+    
+    // pour le test
 }
