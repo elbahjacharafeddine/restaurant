@@ -52,7 +52,7 @@ public class Zone {
         this.ville = ville;
     }
 
-<<<<<<< HEAD
+
     @JsonIgnore
     public Collection<Restaurant> getRestaurant() {
         return restaurant;
@@ -62,15 +62,14 @@ public class Zone {
         this.restaurant = restaurant;
     }
 
-=======
+
     @Override
     public String toString() {
         return "Zone{" +
                 "id=" + id +
                 ", nom='" + nom + '\'' +
                 ", ville=" + ville +
-                ", restaurants=" + restaurants +
+                ", restaurants=" + restaurant +
                 '}';
     }
->>>>>>> b043b7a92bbbe301c7d5a88039cb16bd5fd48033
 }
