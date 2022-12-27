@@ -9,4 +9,5 @@ import java.util.Collection;
 public interface ZoneRepository extends JpaRepository<Zone, Integer> {
     @Query(value= "select *  from Zone ",nativeQuery = true)
     Collection<?> findAllZones();
+    Zone findById(int id);
 }

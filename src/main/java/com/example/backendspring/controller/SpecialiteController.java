@@ -10,7 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RestController
+@RequestMapping("/Specialite")
 public class SpecialiteController {
     @Autowired
     SpecialiteRepository specialiteRepository;
@@ -26,7 +27,7 @@ public class SpecialiteController {
         return ResponseEntity.ok(specialite);
 
     }
-    @GetMapping("/addSpeciality")
+    @PostMapping("/addSpeciality")
     public Specialite AddSpeciality(@RequestBody Specialite specialite){
         return specialiteRepository.save(specialite);
     }
