@@ -1,10 +1,7 @@
 package com.example.backendspring.controller;
 
 import com.example.backendspring.beans.Serie;
-import com.example.backendspring.beans.Specialite;
-import com.example.backendspring.beans.Ville;
 import com.example.backendspring.repository.SerieRepository;
-import com.example.backendspring.repository.VilleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +27,7 @@ public class SeriesController {
         return ResponseEntity.ok(serie);
 
     }
-    @GetMapping("/addSerie")
+    @PostMapping ("/addSerie")
     public Serie AddSerie(@RequestBody Serie serie){
         return serieRepository.save(serie);
     }

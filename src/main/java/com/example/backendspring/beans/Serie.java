@@ -1,5 +1,6 @@
 package com.example.backendspring.beans;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +16,7 @@ public class Serie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id ;
     private String nom;
+    @JsonIgnore
     @OneToMany(mappedBy = "serie", fetch = FetchType.EAGER)
     private List<Restaurant> restaurants;
 
