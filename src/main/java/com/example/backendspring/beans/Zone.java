@@ -2,6 +2,9 @@ package com.example.backendspring.beans;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.List;
+
 @Entity
 public class Zone {
     @Id
@@ -14,6 +17,10 @@ public class Zone {
     @ManyToOne(optional = true)
     @JoinColumn(name = "ville_id", nullable = false)
     private Ville ville;
+
+
+    @OneToMany(mappedBy = "zone", fetch = FetchType.EAGER)
+    private List<Restaurant> restaurants;
 
     public int getId() {
         return id;
