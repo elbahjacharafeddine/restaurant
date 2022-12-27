@@ -1,10 +1,12 @@
 package com.example.backendspring.beans;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Restaurant {
@@ -44,6 +46,13 @@ public class Restaurant {
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Specialite> specialite;
     //Fin Serie
+
+    //Photo
+    @JsonIgnore
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    private Set<Photo> photos;
+    //Fin Photo
 
     public Long getId() {
         return id;
