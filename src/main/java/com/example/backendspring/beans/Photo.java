@@ -14,7 +14,7 @@ public class Photo {
 
     @JsonIgnore
     @ManyToOne(optional = true)
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
 
     public int getId() {
