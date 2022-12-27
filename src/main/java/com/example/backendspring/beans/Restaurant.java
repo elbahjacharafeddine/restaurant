@@ -56,7 +56,7 @@ public class Restaurant {
         this.serie = serie;
     }
     @ManyToMany(fetch = FetchType.EAGER)
-    private List<Specialite> specialite;
+    private Set<Specialite> specialite;
     //Fin Serie
 
     //Photo

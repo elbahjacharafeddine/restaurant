@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -14,7 +15,7 @@ public class Specialite {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nom;
-    @ManyToMany(mappedBy = "specialite",fetch=FetchType.EAGER)
-    private List<Restaurant> restaurants;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<Restaurant> restaurant;
 
 }
