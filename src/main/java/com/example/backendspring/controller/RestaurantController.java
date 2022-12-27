@@ -16,6 +16,8 @@ public class RestaurantController {
     RestaurantRepository restaurantRepository;
     @PostMapping("/add")
     void addRestaurant(@RequestBody Restaurant restaurant){
+
+        System.out.println(restaurant.getZone().toString());
         restaurantRepository.save(restaurant);
     }
 

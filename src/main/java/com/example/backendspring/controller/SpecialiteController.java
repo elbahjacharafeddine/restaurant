@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/specialite")
 public class SpecialiteController {
     @Autowired
     SpecialiteRepository specialiteRepository;
