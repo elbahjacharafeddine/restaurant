@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class Photo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int id_photo;
 
     private String url;
 
@@ -18,11 +18,11 @@ public class Photo {
     private Restaurant restaurant;
 
     public int getId() {
-        return id;
+        return id_photo;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int id_photo) {
+        this.id_photo = id_photo;
     }
 
     public String getUrl() {
