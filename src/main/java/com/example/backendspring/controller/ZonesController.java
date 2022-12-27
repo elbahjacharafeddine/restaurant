@@ -27,7 +27,7 @@ class ZonesController {
         return ResponseEntity.ok(zone);
 
     }
-    @PostMapping("/addZone")
+    @PostMapping("/addzone")
     public Zone AddZone(@RequestBody Zone zone){
         return zoneRepository.save(zone);
     }
