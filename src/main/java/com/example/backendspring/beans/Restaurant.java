@@ -57,6 +57,7 @@ public class Restaurant {
     }
     //Fin Serie
 
+    @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Specialite> specialite;
 

@@ -57,7 +57,7 @@ public class Zone {
     public Collection<Restaurant> getRestaurant() {
         return restaurant;
     }
-    @JsonSetter
+
     public void setRestaurant(Collection<Restaurant> restaurant) {
         this.restaurant = restaurant;
     }

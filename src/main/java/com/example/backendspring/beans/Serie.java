@@ -17,7 +17,7 @@ public class Serie {
     private int id ;
     private String nom;
     @JsonIgnore
-    @OneToMany(mappedBy = "serie", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "serie", fetch = FetchType.LAZY)
     private List<Restaurant> restaurants;
 
     public Serie() {
