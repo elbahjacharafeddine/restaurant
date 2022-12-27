@@ -9,6 +9,22 @@ public class Restaurant {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    //Serie
+
+    @ManyToOne
+    @JoinColumn(name = "serie_id")
+    private Serie serie;
+
+    public Serie getSerie() {
+        return serie;
+    }
+
+    public void setSerie(Serie serie) {
+        this.serie = serie;
+    }
+
+    //Fin Serie
+
     public Long getId() {
         return id;
     }
