@@ -36,6 +36,9 @@ public class Restaurant {
     @JoinColumn(name = "serie_id")
     private Serie serie;
 
+    @ManyToOne
+    @JoinColumn(name = "zone_id")
+    private Zone zone;
     public Serie getSerie() {
         return serie;
     }
@@ -52,7 +55,12 @@ public class Restaurant {
     @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
     private Set<Photo> photos;
+
+
     //Fin Photo
+
+
+
 
     public Long getId() {
         return id;
