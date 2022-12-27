@@ -55,9 +55,11 @@ public class Restaurant {
     public void setSerie(Serie serie) {
         this.serie = serie;
     }
+    //Fin Serie
+
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Specialite> specialite;
-    //Fin Serie
+
 
     //Photo
     @JsonIgnore
