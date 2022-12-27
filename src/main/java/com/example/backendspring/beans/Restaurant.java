@@ -27,6 +27,22 @@ public class Restaurant {
 
 
 
+    //Serie
+
+    @ManyToOne
+    @JoinColumn(name = "serie_id")
+    private Serie serie;
+
+    public Serie getSerie() {
+        return serie;
+    }
+
+    public void setSerie(Serie serie) {
+        this.serie = serie;
+    }
+
+    //Fin Serie
+
     public Long getId() {
         return id;
     }
