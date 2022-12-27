@@ -1,6 +1,9 @@
 package com.example.backendspring.beans;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.Set;
 
 @Entity
 public class Restaurant {
@@ -24,6 +27,13 @@ public class Restaurant {
     }
 
     //Fin Serie
+
+    //Photo
+    @JsonIgnore
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    private Set<Photo> photos;
+    //Fin Photo
 
     public Long getId() {
         return id;
