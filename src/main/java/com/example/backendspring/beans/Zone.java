@@ -17,7 +17,7 @@ public class Zone {
     @ManyToOne
     private Ville ville;
     @OneToMany(mappedBy = "zone")
-    private Collection<Restaurant> restaurant ;
+    private Collection<Restaurant> Restaurants ;
 
 
     public Zone() {
@@ -28,7 +28,7 @@ public class Zone {
         super();
         this.nom = nom;
         this.ville = ville;
-        this.restaurant = restaurant;
+        this.Restaurants = restaurant;
     }
 
     public int getId() {
@@ -52,24 +52,17 @@ public class Zone {
         this.ville = ville;
     }
 
-
     @JsonIgnore
-    public Collection<Restaurant> getRestaurant() {
-        return restaurant;
+    public Collection<Restaurant> getPharmacies() {
+        return Restaurants;
+    }
+    @JsonSetter
+    public void setPharmacies(Collection<Restaurant> pharmacies) {
+        this.Restaurants = pharmacies;
     }
 
-    public void setRestaurant(Collection<Restaurant> restaurant) {
-        this.restaurant = restaurant;
-    }
 
 
-    @Override
-    public String toString() {
-        return "Zone{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", ville=" + ville +
-                ", restaurants=" + restaurant +
-                '}';
-    }
+
 }
+

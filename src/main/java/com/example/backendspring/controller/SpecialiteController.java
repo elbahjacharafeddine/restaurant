@@ -28,13 +28,13 @@ public class SpecialiteController {
         return ResponseEntity.ok(specialite);
 
     }
-    @GetMapping("/addSpeciality")
+    @PostMapping ("/addSpeciality")
     public Specialite AddSpeciality(@RequestBody Specialite specialite){
         return specialiteRepository.save(specialite);
     }
 
     //update bill by id
-    @PutMapping("/specialite/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Specialite> updateSpecialite(@PathVariable int id,@RequestBody Specialite specialite){
 
         Specialite existE =specialiteRepository.findById(id);
