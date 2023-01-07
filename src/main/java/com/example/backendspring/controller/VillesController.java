@@ -14,10 +14,17 @@ import java.util.List;
 @RestController
 @RequestMapping("/villes")
 class VillesController {
+
+
     @Autowired
     VilleRepository villeRepository;
     @GetMapping("/all")
     public List<Ville> findAll(){
+        return villeRepository.findAll();
+    }
+
+    @GetMapping("/villes/all")
+    public List<Ville> getAllUsers(){
         return villeRepository.findAll();
     }
     @GetMapping("/all/{id}")
