@@ -41,19 +41,19 @@ class VillesController {
     }
 
     //update bill by id
-    @PutMapping("/ville/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Ville> updateVille(@PathVariable int id,@RequestBody Ville ville){
 
         Ville existE =villeRepository.findById(id);
         existE.setNom(ville.getNom());
-        existE.setZones(ville.getZones());
+
         villeRepository.save(existE);
         return ResponseEntity.ok(existE);
 
     }
 
     //Delete Bill By ID
-    @DeleteMapping("/ville/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<HttpStatus> deleteVille(@PathVariable int id){
 
         Ville ville = villeRepository.findById(id);

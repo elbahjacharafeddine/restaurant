@@ -19,7 +19,7 @@ public class SeriesController {
     public List<Serie> findAll(){
         return serieRepository.findAll();
     }
-    @GetMapping("/Serie/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Serie> getSerieByid(@PathVariable int id){
 
         Serie serie = serieRepository.findById(id);
@@ -33,7 +33,7 @@ public class SeriesController {
     }
 
     //update bill by id
-    @PutMapping("/Serie/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Serie> updateSerie(@PathVariable int id,@RequestBody Serie serie){
 
         Serie existE =serieRepository.findById(id);
@@ -44,7 +44,7 @@ public class SeriesController {
     }
 
     //Delete Bill By ID
-    @DeleteMapping("/Serie/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<HttpStatus> deleteBill(@PathVariable int id){
 
         Serie serie = serieRepository.findById(id);

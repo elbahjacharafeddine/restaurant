@@ -2,6 +2,7 @@ package com.example.backendspring.beans;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -36,6 +37,8 @@ public class Restaurant {
     @Temporal(TemporalType.TIME)
     @JsonFormat(pattern="HH:mm")
     private Date heureClose;
+    private int etat;
+    private String URL;
 
 
 
@@ -43,10 +46,12 @@ public class Restaurant {
 
     @ManyToOne
     @JoinColumn(name = "serie_id")
+    @JsonIgnoreProperties(value = {"restaurants", "hibernateLazyInitializer"})
     private Serie serie;
 
     @ManyToOne
     @JoinColumn(name = "zone_id")
+    @JsonIgnoreProperties(value = {"restaurants", "hibernateLazyInitializer"})
     private Zone zone;
     public Serie getSerie() {
         return serie;
@@ -82,9 +87,14 @@ public class Restaurant {
         this.id = id;
     }
 
+    public String getURL() {
+        return URL;
+    }
 
-    
-    // pour le test
+    public void setURL(String URL) {
+        this.URL = URL;
+    }
+// pour le test
 
     // fin de test
 }

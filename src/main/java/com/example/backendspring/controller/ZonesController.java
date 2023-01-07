@@ -58,7 +58,7 @@ class ZonesController {
     }
 
     //Delete Bill By ID
-    @DeleteMapping("/zone/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<HttpStatus> deleteZone(@PathVariable int id){
 
         Zone zone = zoneRepository.findById(id);
