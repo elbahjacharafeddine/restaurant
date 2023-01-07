@@ -30,8 +30,8 @@ public class RestaurantDAO implements RestaurantInterface {
 
     @Override
     public int add(Restaurant p) {
-        String sql = "insert into restaurant(nom,adresse, latitude, longitude, rank, serie_id, zone_id)values(?,?,?,?,?,1,1)";
-        return template.update(sql, p.getNom(), p.getAdresse(),p.getLatitude(),p.getLongitude(),p.getRank());
+        String sql = "insert into restaurant(nom,adresse, latitude, longitude, rank, serie_id, zone_id,etat)values(?,?,?,?,?,1,?,0)";
+        return template.update(sql, p.getNom(), p.getAdresse(),p.getLatitude(),p.getLongitude(),p.getRank(),p.getZone());
     }
 
     @Override
