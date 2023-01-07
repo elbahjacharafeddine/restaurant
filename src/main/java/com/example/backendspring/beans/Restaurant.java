@@ -77,7 +77,13 @@ public class Restaurant {
     //Fin Photo
 
 
+    public Zone getZone() {
+        return zone;
+    }
 
+    public void setZone(Zone zone) {
+        this.zone = zone;
+    }
 
     public Long getId() {
         return id;
