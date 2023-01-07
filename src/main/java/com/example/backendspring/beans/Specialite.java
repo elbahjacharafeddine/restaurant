@@ -1,5 +1,6 @@
 package com.example.backendspring.beans;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,7 +16,8 @@ public class Specialite {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nom;
-    @ManyToMany(fetch = FetchType.EAGER)
+    @JsonIgnore
+    @ManyToMany(fetch = FetchType.LAZY)
     private Set<Restaurant> restaurant;
 
 }
